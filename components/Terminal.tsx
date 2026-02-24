@@ -18,19 +18,26 @@ export default function Terminal({ isOpen, onClose, title, content }: TerminalPr
 
   useEffect(() => {
     if (isOpen) {
-      setIsTyping(true);
+      const cleanContent = content.trim();
       setDisplayText('');
+      setIsTyping(true);
+      
+      let timeoutId: NodeJS.Timeout;
       let i = 0;
-      const interval = setInterval(() => {
-        if (i < content.length) {
-          setDisplayText((prev) => prev + content.charAt(i));
+      
+      const type = () => {
+        if (i < cleanContent.length) {
+          setDisplayText(cleanContent.slice(0, i + 1));
           i++;
+          timeoutId = setTimeout(type, 5);
         } else {
           setIsTyping(false);
-          clearInterval(interval);
         }
-      }, 5);
-      return () => clearInterval(interval);
+      };
+      
+      timeoutId = setTimeout(type, 100); // 100ms delay for stability
+      
+      return () => clearTimeout(timeoutId);
     }
   }, [isOpen, content]);
 
@@ -71,9 +78,11 @@ export default function Terminal({ isOpen, onClose, title, content }: TerminalPr
               ref={scrollRef}
               className="flex-1 p-6 font-mono text-sm text-emerald-500/90 overflow-y-auto custom-scrollbar"
             >
-              <div className="flex items-start gap-2 mb-4">
-                <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div className="whitespace-pre-wrap leading-relaxed">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="mt-1 flex-shrink-0">
+                  <ChevronRight className="w-4 h-4 text-emerald-500" />
+                </div>
+                <div className="whitespace-pre-wrap leading-relaxed flex-1 pl-1">
                   {displayText}
                   {isTyping && <span className="inline-block w-2 h-4 bg-emerald-500 animate-pulse ml-1" />}
                 </div>
