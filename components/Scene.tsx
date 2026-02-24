@@ -173,11 +173,7 @@ export default function Scene() {
         <Suspense fallback={null}>
           <AnimatePresence>
             {destructState !== 'destroyed' && (
-              <motion.group
-                initial={{ scale: 1 }}
-                animate={destructState === 'blast' ? { scale: [1, 1.5, 0], rotate: [0, 90, 180] } : { scale: 1 }}
-                transition={{ duration: 2 }}
-              >
+              <group>
                 <group position={[0, 0, 0]}>
                   <EvidenceItem 
                     id="summary" 
@@ -249,7 +245,7 @@ export default function Scene() {
                     transparent 
                   />
                 </mesh>
-              </motion.group>
+              </group>
             )}
           </AnimatePresence>
         </Suspense>
