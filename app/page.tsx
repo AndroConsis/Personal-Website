@@ -75,7 +75,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Global Background Noise/Grain */}
-      <div className="fixed inset-0 z-[400] pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
+      <div className="fixed inset-0 z-[400] pointer-events-none opacity-[0.03] mix-blend-overlay" style={{backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')"}} />
     </main>
   );
 }
