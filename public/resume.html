@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prateek Rathore — Resume</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Screen wrapper ─────────────────────────────────────── */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   'Helvetica Neue', Arial, sans-serif;
+      background: #c8d6e5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 16px 48px;
+      min-height: 100vh;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      width: 794px;
+      max-width: 100%;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-home  { background: #1e293b; color: #94a3b8; }
+    .btn-print { background: #10b981; color: #0f172a; }
+    .btn:hover { opacity: 0.9; }
+
+    /* ── Resume shell ───────────────────────────────────────── */
+    .resume {
+      width: 794px;
+      max-width: 100%;
+      background: white;
+      display: flex;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ────────────────────────────────────────────── */
+    .sidebar {
+      width: 248px;
+      flex-shrink: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 32px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 14px;
+      border: 3px solid rgba(16,185,129,0.25);
+      letter-spacing: -1px;
+    }
+
+    .s-name {
+      font-size: 19px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .s-role {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-top: 5px;
+      margin-bottom: 22px;
+    }
+
+    .s-label {
+      font-size: 8px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      color: #10b981;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      margin-top: 18px;
+      border-bottom: 1px solid rgba(16,185,129,0.18);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 8.5px;
+      color: #94a3b8;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .c-icon {
+      color: #10b981;
+      flex-shrink: 0;
+      font-style: normal;
+      width: 12px;
+      text-align: center;
+    }
+
+    .skill-row { margin-bottom: 10px; }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .skill-name {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-pct {
+      font-size: 7.5px;
+      color: #475569;
+    }
+
+    .skill-tags {
+      font-size: 7.8px;
+      color: #64748b;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .bar-track {
+      height: 2.5px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #34d399);
+      border-radius: 99px;
+    }
+
+    .edu-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 3px;
+    }
+
+    .edu-sub {
+      font-size: 8px;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    .cert-item {
+      font-size: 8px;
+      color: #94a3b8;
+      line-height: 1.45;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .cert-item::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-size: 7.5px;
+      font-weight: 700;
+    }
+
+    /* ── Main content ───────────────────────────────────────── */
+    .main {
+      flex: 1;
+      padding: 32px 30px;
+      background: #ffffff;
+    }
+
+    .m-header {
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #10b981;
+    }
+
+    .m-name {
+      font-size: 30px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .m-sub {
+      font-size: 11px;
+      color: #10b981;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .m-section {
+      font-size: 8.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0f172a;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .m-section::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    .block { margin-bottom: 15px; }
+
+    .summary {
+      font-size: 9px;
+      color: #334155;
+      line-height: 1.72;
+    }
+
+    /* Experience */
+    .exp-list { display: flex; flex-direction: column; gap: 9px; }
+
+    .exp-card {
+      padding-left: 10px;
+      border-left: 3px solid #10b981;
+    }
+
+    .exp-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .exp-company {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .exp-period {
+      font-size: 7.5px;
+      color: #94a3b8;
+      font-style: italic;
+      flex-shrink: 0;
+    }
+
+    .exp-role {
+      font-size: 8.5px;
+      font-weight: 600;
+      color: #10b981;
+      margin: 2px 0 4px;
+    }
+
+    .exp-bullets { display: flex; flex-direction: column; gap: 1.5px; }
+
+    .exp-bullet {
+      font-size: 8px;
+      color: #334155;
+      line-height: 1.5;
+      padding-left: 9px;
+      position: relative;
+    }
+
+    .exp-bullet::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-size: 7px;
+      top: 2px;
+    }
+
+    /* Projects */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .proj-card {
+      padding: 7px 10px;
+      background: #f8fafc;
+      border-radius: 4px;
+      border-left: 3px solid #10b981;
+    }
+
+    .proj-name {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .proj-desc {
+      font-size: 7.5px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* ── Print ──────────────────────────────────────────────── */
+    @media print {
+      body { background: white; padding: 0; display: block; }
+      .toolbar { display: none !important; }
+      .resume { width: 210mm; height: 297mm; overflow: hidden; box-shadow: none; border-radius: 0; }
+      @page { size: A4 portrait; margin: 0; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar (hidden when printing) -->
+  <div class="toolbar">
+    <a class="btn btn-home" href="/">← HOME</a>
+    <button class="btn btn-print" onclick="window.print()">⬇ EXPORT PDF</button>
+  </div>
+
+  <div class="resume">
+
+    <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+    <aside class="sidebar">
+
+      <div class="avatar">PR</div>
+      <div class="s-name">Prateek<br>Rathore</div>
+      <div class="s-role">Engineering Manager</div>
+
+      <!-- Contact -->
+      <div class="s-label">Contact</div>
+      <div class="contact-item"><i class="c-icon">✉</i>p.rathore.2903@gmail.com</div>
+      <div class="contact-item"><i class="c-icon">☎</i>+91-9527053469</div>
+      <div class="contact-item"><i class="c-icon">📍</i>Pune, India</div>
+      <div class="contact-item"><i class="c-icon">in</i>linkedin.com/in/prateek-rathore</div>
+      <div class="contact-item"><i class="c-icon">🌐</i>prateekrathore.com</div>
+      <div class="contact-item"><i class="c-icon">⌥</i>github.com/AndroConsis</div>
+
+      <!-- Skills -->
+      <div class="s-label">Skills</div>
+
+      <div class="skill-row">
+        <div class="skill-top">
+          <span class="skill-name">Frontend</span>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="skill-tags">React.js · React Native · JavaScript · TypeScript · Redux · MobX</div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-top">
+          <span class="skill-name">Backend</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-tags">Node.js · Java · Spring Boot · GraphQL · REST APIs</div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-top">
+          <span class="skill-name">DevOps &amp; Cloud</span>
+          <span class="skill-pct">78%</span>
+        </div>
+        <div class="skill-tags">AWS (CCP) · Terraform · CI/CD · Git</div>
+        <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-top">
+          <span class="skill-name">Database</span>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="skill-tags">SQL · Azure Synapse Analytics</div>
+        <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-top">
+          <span class="skill-name">Leadership</span>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="skill-tags">Team Mgmt · Agile/Scrum · JIRA · UX Design</div>
+        <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+
+      <!-- Education -->
+      <div class="s-label">Education</div>
+      <div class="edu-title">B.Tech / B.E.</div>
+      <div class="edu-sub">Rajasthan Technical University<br>Jaipur</div>
+
+      <!-- Certifications -->
+      <div class="s-label">Certifications</div>
+      <div class="cert-item">AWS Certified Cloud Practitioner <br>(Valid until Dec 2027)</div>
+      <div class="cert-item">Java &amp; Spring Framework — Udemy</div>
+      <div class="cert-item">Android Development Training — Seed Infotech</div>
+
+    </aside>
+
+    <!-- ─── MAIN ──────────────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Header -->
+      <div class="m-header">
+        <div class="m-name">Prateek Rathore</div>
+        <div class="m-sub">Engineering Manager &nbsp;·&nbsp; 10+ Years</div>
+      </div>
+
+      <!-- Summary -->
+      <div class="block">
+        <div class="m-section">Professional Summary</div>
+        <p class="summary">
+          Results-driven Engineering Manager with 10+ years of experience in full-stack development,
+          specializing in React, React Native, Node.js, and Java Spring Boot. Proven expertise in
+          architecting scalable, high-performance applications and leading cross-functional teams
+          across Fintech, Healthcare, and Analytics sectors. Skilled in Agile methodologies,
+          GraphQL API design, cloud infrastructure, and frontend performance optimization.
+        </p>
+      </div>
+
+      <!-- Experience -->
+      <div class="block">
+        <div class="m-section">Professional Experience</div>
+        <div class="exp-list">
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-company">EXL Service</span>
+              <span class="exp-period">Oct 2021 – Present</span>
+            </div>
+            <div class="exp-role">Engineering Manager</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">Leading Fintech platform team using React, Spring Boot, and GraphQL</div>
+              <div class="exp-bullet">Designed GraphQL APIs integrating Power BI metrics from Azure Synapse SQL Pool</div>
+              <div class="exp-bullet">Driving best practices in architecture, testing, and CI/CD deployment</div>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-company">FIGMD</span>
+              <span class="exp-period">Jan 2018 – Sep 2021</span>
+            </div>
+            <div class="exp-role">Senior Software Developer</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">Developed cross-platform mobile apps using React Native and ReactJS</div>
+              <div class="exp-bullet">Built CI pipelines and maintained clean architecture using Redux / MobX</div>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-company">Krixi Solutions</span>
+              <span class="exp-period">Mar 2017 – Dec 2017</span>
+            </div>
+            <div class="exp-role">Software Analyst</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">Led Android and cross-platform app delivery for healthcare products</div>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-company">Educo Technology</span>
+              <span class="exp-period">Aug 2016 – Jan 2017</span>
+            </div>
+            <div class="exp-role">Software Engineer</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">Delivered hybrid mobile apps using PhoneGap and Android SDK</div>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-company">Consistenza Technologies</span>
+              <span class="exp-period">Jul 2015 – Aug 2016</span>
+            </div>
+            <div class="exp-role">Mobile App Developer</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">Built cross-platform apps across Android, iOS, Windows, and Blackberry</div>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-company">Sangha Technologies</span>
+              <span class="exp-period">Dec 2014 – Apr 2015</span>
+            </div>
+            <div class="exp-role">Junior Software Developer</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">Created native Android applications in a collaborative team environment</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="block">
+        <div class="m-section">Key Projects</div>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-name">PayPal EDQ</div>
+            <div class="proj-desc">UX and React components for enterprise data quality dashboard</div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-name">Rivian BI Dashboard</div>
+            <div class="proj-desc">Sole developer of a full-stack analytics application</div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-name">MakeMyTrip Ambassador</div>
+            <div class="proj-desc">Referral and rewards mobile application for user engagement</div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-name">Kare Nurse App</div>
+            <div class="proj-desc">Hospital workflow automation via barcode scanning</div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-name">Lokal App</div>
+            <div class="proj-desc">Location-based service discovery platform</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
