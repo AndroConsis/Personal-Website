@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import EvidenceItem from './EvidenceItem';
 import Terminal from './Terminal';
 import SystemLog from './SystemLog';
+import CommandTerminal from './CommandTerminal';
 
 const DATA = {
   summary: {
@@ -323,7 +324,9 @@ export default function Scene() {
 
       <SystemLog />
 
-      <Terminal 
+      <CommandTerminal onNodeOpen={handleItemClick} />
+
+      <Terminal
         isOpen={!!activeId} 
         onClose={() => setActiveId(null)} 
         title={activeId ? DATA[activeId as keyof typeof DATA].title : ''}
