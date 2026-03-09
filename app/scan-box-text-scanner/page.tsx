@@ -33,7 +33,7 @@ export default function ScanBoxPage() {
             alt="Text Scanner icon"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
-          Text Scanner
+          ScanBox
         </div>
         <a className="nav-cta" href="#cta">Download Free</a>
       </nav>
@@ -529,7 +529,7 @@ export default function ScanBoxPage() {
         <div className="container">
           <div className="footer-links">
             <a href="https://www.prateekrathore.com/privacy-policy/">Privacy Policy</a>
-            <a href="mailto:mail@prateekrathore.com">Contact</a>
+            <a href="mailto:hello@prateekrathore.com">Contact</a>
             <a href="https://www.prateekrathore.com">prateekrathore.com</a>
           </div>
           <p>© 2026 Prateek Rathore. Text Scanner is an independent app not affiliated with Apple Inc.</p>
