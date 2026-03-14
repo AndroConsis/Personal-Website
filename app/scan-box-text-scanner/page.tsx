@@ -513,7 +513,7 @@ export default function ScanBoxPage() {
           <h2 className="reveal">Stop fighting with your camera.<br />Just scan it.</h2>
           <p className="reveal reveal-delay-1">Free. No account. Works instantly.</p>
 
-          <a className="appstore-btn reveal reveal-delay-2" href="https://apps.apple.com/app/text-scanner" target="_blank" rel="noopener">
+          <a className="appstore-btn reveal reveal-delay-2" href="https://apps.apple.com/app/scanbox-ocr-copy-text/id6759466941" target="_blank" rel="noopener">
             <svg viewBox="0 0 814 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-42.3-150.3-107.9c-52.1-73.9-88.3-186.3-88.3-293.4C21 336.8 95 180.9 204.1 110.6c50.9-33.5 117.9-49.1 183.9-49.1 64.7 0 126.4 20.5 172.2 48.5 48.4 29.2 87 71.4 110.6 119.5 6.4 13.8 10.5 27 10.5 27z" />
             </svg>
