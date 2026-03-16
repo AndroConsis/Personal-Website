@@ -80,16 +80,31 @@ function lineColor(type: OutputLine['type']): string {
   }
 }
 
+const CYCLE_LABELS = [
+  '◉ TERMINAL',
+  '↓ DOWNLOAD RESUME',
+  '◎ EXPLORE SPACE',
+  '◉ IPHONE APPS',
+];
+
 export default function CommandTerminal({ onNodeOpen }: CommandTerminalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<OutputLine[]>([]);
   const [history, setHistory] = useState<string[]>([]);
   const [historyIdx, setHistoryIdx] = useState(-1);
+  const [labelIdx, setLabelIdx] = useState(0);
   const hasOpened = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setLabelIdx(prev => (prev + 1) % CYCLE_LABELS.length);
+    }, 2500);
+    return () => clearInterval(id);
+  }, []);
 
   // Backtick toggle
   useEffect(() => {
@@ -205,13 +220,40 @@ export default function CommandTerminal({ onNodeOpen }: CommandTerminalProps) {
 
   return (
     <>
-      {/* Toggle button */}
-      <button
-        onClick={() => setIsOpen(prev => !prev)}
-        className="fixed bottom-8 right-40 z-[300] px-3 py-1 font-mono text-[10px] border border-emerald-500/40 text-emerald-500/70 hover:text-emerald-500 hover:border-emerald-500/70 hover:bg-emerald-500/5 transition-colors bg-black/80 tracking-widest uppercase"
-      >
-        {isOpen ? '◼ CLOSE' : '◉ TERMINAL'}
-      </button>
+      {/* Action buttons */}
+      <div className="fixed bottom-8 right-8 z-[300] flex items-center gap-2">
+        {/* Resume download button */}
+        <a
+          href="/resume.pdf"
+          download="Prateek_Rathore_Resume.pdf"
+          className="px-3 py-1 font-mono text-[10px] border border-emerald-500/40 text-emerald-500/70 hover:text-emerald-500 hover:border-emerald-500/70 hover:bg-emerald-500/5 transition-colors bg-black/80 tracking-widest uppercase whitespace-nowrap"
+        >
+          ↓ RESUME
+        </a>
+
+        {/* Terminal toggle button with cycling label */}
+        <button
+          onClick={() => setIsOpen(prev => !prev)}
+          className="relative px-3 py-1 font-mono text-[10px] border border-emerald-500/40 text-emerald-500/70 hover:text-emerald-500 hover:border-emerald-500/70 hover:bg-emerald-500/5 transition-colors bg-black/80 tracking-widest uppercase overflow-hidden min-w-[140px] h-[26px] flex items-center justify-center"
+        >
+          {isOpen ? (
+            <span>◼ CLOSE</span>
+          ) : (
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={labelIdx}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.25 }}
+                className="absolute"
+              >
+                {CYCLE_LABELS[labelIdx]}
+              </motion.span>
+            </AnimatePresence>
+          )}
+        </button>
+      </div>
 
       <AnimatePresence>
         {isOpen && (
