@@ -57,7 +57,7 @@ export default function ScanBoxPage() {
           </h1>
 
           <p className="hero-sub reveal reveal-delay-2">
-            Point your camera at any text, drag the focus box over exactly what you need, and copy it in one tap. Entirely on-device. No account. No internet.
+            Point your camera at any text, drag the focus box over exactly what you need, and tap Capture — it&apos;s already in your clipboard. 13 languages, entirely on-device. No account. No internet.
           </p>
 
           <div className="hero-actions reveal reveal-delay-3">
@@ -196,8 +196,8 @@ export default function ScanBoxPage() {
                 <div className="problem-step">
                   <div className="step-icon good">📋</div>
                   <div className="step-text">
-                    <strong>Copy, share, or save — instantly</strong>
-                    <span className="pain" style={{ color: 'var(--green)' }}>Clean text, ready to paste. No editing needed.</span>
+                    <strong>It&apos;s already copied</strong>
+                    <span className="pain" style={{ color: 'var(--green)' }}>Text lands in your clipboard automatically. Paste anywhere.</span>
                   </div>
                 </div>
               </div>
@@ -233,8 +233,8 @@ export default function ScanBoxPage() {
             </div>
             <div className="step-card reveal reveal-delay-3">
               <div className="step-number">3</div>
-              <h3>Copy, share, or save</h3>
-              <p>Copy to clipboard in one tap, share to any app, or let it save to your local history automatically. Every scan is there waiting when you need it.</p>
+              <h3>Paste anywhere</h3>
+              <p>Captured text is copied to your clipboard automatically and saved to local history. Share to any app from the result sheet — nothing to clean up, nothing to sync.</p>
             </div>
           </div>
         </div>
@@ -336,8 +336,8 @@ export default function ScanBoxPage() {
 
             <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon">📋</div>
-              <h3>One-tap copy</h3>
-              <p>Tap Copy and it&apos;s in your clipboard. That&apos;s it.</p>
+              <h3>Auto-copy on capture</h3>
+              <p>The moment the scan succeeds, the text is already on your clipboard. Switch apps and paste — no extra tap required.</p>
             </div>
 
             <div className="feature-card reveal reveal-delay-1">
@@ -365,15 +365,15 @@ export default function ScanBoxPage() {
             </div>
 
             <div className="feature-card reveal reveal-delay-2">
-              <div className="feature-icon">📖</div>
-              <h3>Interactive first-launch guide</h3>
-              <p>A 3-step coach overlay shows you exactly how to use the scan box. Revisit it any time from History.</p>
+              <div className="feature-icon">🌐</div>
+              <h3>13 languages, on-device</h3>
+              <p>English, German, French, Spanish, Italian, Portuguese, Russian, Ukrainian, Chinese (Simplified &amp; Traditional), Japanese, and Korean. Switch any time from Settings.</p>
             </div>
 
             <div className="feature-card reveal reveal-delay-3">
-              <div className="feature-icon">🎯</div>
-              <h3>Haptic feedback</h3>
-              <p>Subtle haptics confirm every capture — a medium tap on press, a success pulse when text is found.</p>
+              <div className="feature-icon">⚡</div>
+              <h3>Fast Mode &amp; Settings</h3>
+              <p>Flip on Fast Mode for instant capture on the lowest-latency pipeline, toggle haptics, or change recognition language — all from a single Settings screen.</p>
             </div>
           </div>
         </div>
@@ -513,7 +513,7 @@ export default function ScanBoxPage() {
           <h2 className="reveal">Stop fighting with your camera.<br />Just scan it.</h2>
           <p className="reveal reveal-delay-1">Free. No account. Works instantly.</p>
 
-          <a className="appstore-btn reveal reveal-delay-2" href="https://apps.apple.com/app/scanbox-ocr-copy-text/id6759466941" target="_blank" rel="noopener">
+          <a className="appstore-btn reveal reveal-delay-2" href="https://apps.apple.com/app/scanbox-ocr-text-scanner/id6759466941" target="_blank" rel="noopener">
             <svg viewBox="0 0 814 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-42.3-150.3-107.9c-52.1-73.9-88.3-186.3-88.3-293.4C21 336.8 95 180.9 204.1 110.6c50.9-33.5 117.9-49.1 183.9-49.1 64.7 0 126.4 20.5 172.2 48.5 48.4 29.2 87 71.4 110.6 119.5 6.4 13.8 10.5 27 10.5 27z" />
             </svg>
