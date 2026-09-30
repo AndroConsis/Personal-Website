@@ -54,5 +54,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/tidy/`,
+      lastModified: new Date('2026-09-30'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/tidy/support/`,
+      lastModified: new Date('2026-09-30'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/tidy/privacy-policy/`,
+      lastModified: new Date('2026-09-30'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 }

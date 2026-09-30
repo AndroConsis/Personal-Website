@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – Tidy: Mac Storage Cleaner</title>
+  <meta name="description" content="Help with Tidy, the Mac storage cleaner for Xcode and developer caches." />
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #ffffff;
+      padding: 48px 24px 80px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: #666;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: #f5f5f7;
+      border-left: 4px solid #0070f3;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1>Tidy Support</h1>
+    <p class="meta">App: <strong>Tidy – Mac Storage Cleaner</strong> &nbsp;·&nbsp; <a href="../">About Tidy</a> &nbsp;·&nbsp; <a href="../privacy-policy/">Privacy Policy</a></p>
+
+    <div class="highlight-box">
+      <p>Need help? Email <a href="mailto:hello@prateekrathore.com?subject=Tidy%20support">hello@prateekrathore.com</a> — we usually reply within two working days.</p>
+    </div>
+
+    <h2>Tidy doesn't find anything to clean</h2>
+    <p>
+      Tidy can only look inside your Home folder after you grant access once. Open Tidy, go to
+      <strong>Settings → Home folder access</strong>, click <strong>Grant Access…</strong> and confirm the
+      preselected Home folder. Then click Rescan.
+    </p>
+
+    <h2>What do SAFE, REVIEW and MANUAL mean?</h2>
+    <ul>
+      <li><strong>SAFE</strong> — caches and build data that their tool rebuilds on its own. "Clean all safe items" and scheduled auto-clean only ever touch these.</li>
+      <li><strong>REVIEW</strong> — probably fine to remove, but it costs something (a re-download, a rebuild, or wiping a simulator's data), so Tidy waits for your click.</li>
+      <li><strong>MANUAL</strong> — owned by macOS or another app. Tidy explains the right way to free the space, or shows the item in Finder for you.</li>
+    </ul>
+
+    <h2>How do I get something back?</h2>
+    <p>
+      Files Tidy removes go to the Trash. Open the Trash, select the item and choose <strong>File → Put Back</strong>.
+      Simulator erases and simulator runtime removals can't be undone from the Trash; reinstall runtimes from
+      <strong>Xcode → Settings → Components</strong>.
+    </p>
+
+    <h2>Why can't Tidy delete some items itself?</h2>
+    <p>
+      Tidy follows the Mac App Store's security rules and never asks for your administrator password. Items owned
+      by macOS (such as leftover system simulator caches) and apps in /Applications are shown in Finder so you can
+      remove them yourself.
+    </p>
+
+    <h2>Simulator items aren't showing up</h2>
+    <p>
+      Simulator runtimes, devices and caches are detected through Xcode's command-line tools. Make sure Xcode is
+      installed in /Applications and has been opened at least once.
+    </p>
+
+    <h2>Does Tidy run in the background?</h2>
+    <p>
+      Tidy lives in your menu bar and re-checks weekly while it's running. To keep it running after a restart,
+      turn on <strong>Settings → Open Tidy when I log in</strong>. Automatic cleaning is off unless you turn it on,
+      and it only ever removes SAFE items.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Found a bug or have a feature idea? Email <a href="mailto:hello@prateekrathore.com?subject=Tidy%20feedback">hello@prateekrathore.com</a>
+      and include your macOS version.
+    </p>
+
+    <footer>
+      &copy; 2026 Neha Rathore. All rights reserved.
+    </footer>
+
+  </div>
+</body>
+</html>
