@@ -101,7 +101,7 @@
     <h2>Tidy doesn't find anything to clean</h2>
     <p>
       Tidy can only look inside your Home folder after you grant access once. Open Tidy, go to
-      <strong>Settings → Home folder access</strong>, click <strong>Grant Access…</strong> and confirm the
+      <strong>Settings → Home folder</strong>, click <strong>Grant Access…</strong> and confirm the
       preselected Home folder. Then click Rescan.
     </p>
 
@@ -119,11 +119,34 @@
       <strong>Xcode → Settings → Components</strong>.
     </p>
 
+    <h2>How do I uninstall an app with Tidy?</h2>
+    <p>
+      Open <strong>Apps</strong>, choose <strong>Uninstall…</strong> next to the app, and untick any leftover files you
+      want to keep. The first time, Tidy asks you to grant your Applications folder once. Apps installed by the App
+      Store or by an installer belong to macOS, so Tidy tells you up front and shows the app in Finder for you to
+      drag to the Trash; it then offers to remove the app's leftover files.
+    </p>
+
     <h2>Why can't Tidy delete some items itself?</h2>
     <p>
       Tidy follows the Mac App Store's security rules and never asks for your administrator password. Items owned
-      by macOS (such as leftover system simulator caches) and apps in /Applications are shown in Finder so you can
+      by macOS, such as leftover system simulator caches or apps from the App Store, are shown in Finder so you can
       remove them yourself.
+    </p>
+
+    <h2>Can Tidy empty the Trash?</h2>
+    <p>
+      No. macOS lets only Finder empty the Trash. In <strong>Junk Files → Trash</strong>, click
+      <strong>Open Finder</strong>, then press <strong>Shift-Command-Delete</strong> or choose
+      <strong>Finder → Empty Trash</strong>. Until you empty it, anything Tidy removed can be put back.
+    </p>
+
+    <h2>What do Large Files and Disk Map look at?</h2>
+    <p>
+      Both look through your Home folder, but only when you start them, and they read sizes, not the contents of your
+      files. The first time, macOS may ask whether Tidy can access your Desktop or Documents folder. Disk Map also
+      tells you which app or tool a folder belongs to, whether that app is still installed, and whether the folder is
+      safe to remove. Nothing is removed without your approval.
     </p>
 
     <h2>Simulator items aren't showing up</h2>
@@ -135,14 +158,14 @@
     <h2>Does Tidy run in the background?</h2>
     <p>
       Tidy lives in your menu bar and re-checks weekly while it's running. To keep it running after a restart,
-      turn on <strong>Settings → Open Tidy when I log in</strong>. Automatic cleaning is off unless you turn it on,
+      turn on <strong>Settings → Open Tidy at login</strong>. Automatic cleaning is off unless you turn it on,
       and it only ever removes SAFE items.
     </p>
 
     <h2>Contact</h2>
     <p>
-      Found a bug or have a feature idea? Email <a href="mailto:hello@prateekrathore.com?subject=Tidy%20feedback">hello@prateekrathore.com</a>
-      and include your macOS version.
+      Found a bug or have a feature idea? Use <strong>Settings → Send Feedback</strong> in Tidy, or email
+      <a href="mailto:hello@prateekrathore.com?subject=Tidy%20feedback">hello@prateekrathore.com</a> and include your macOS version.
     </p>
 
     <footer>

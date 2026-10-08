@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tidy – Disk Space Cleaner: Free Up Space, Keep Your Photos</title>
-  <meta name="description" content="Tidy frees up gigabytes on your Mac by finding Xcode DerivedData, old simulators, device support files and developer caches like npm, Homebrew and Gradle. Every item is marked Safe or Review, and removals go to the Trash." />
+  <meta name="description" content="Tidy frees up gigabytes on your Mac: clear junk and caches, see what's using space in a visual disk map, find large forgotten files, and uninstall apps with their leftovers. Built for developers too, with Xcode, Android and package-manager cleanup. Nothing is removed without your approval." />
   <link rel="canonical" href="https://www.prateekrathore.com/tidy/" />
   <meta property="og:title" content="Tidy – Disk Space Cleaner" />
-  <meta property="og:description" content="Clear Xcode and developer caches safely. Free up gigabytes on your Mac." />
+  <meta property="og:description" content="Clear junk, find large files, uninstall apps and see your disk at a glance. Free up gigabytes safely." />
   <meta property="og:image" content="https://www.prateekrathore.com/tidy/images/01-free-up-space.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -72,7 +72,7 @@
     <header class="hero">
       <img class="icon" src="images/icon.png" alt="Tidy app icon" width="112" height="112" />
       <h1>Free up gigabytes of space</h1>
-      <p class="lede">Tidy finds what Xcode, simulators and developer tools leave behind — DerivedData, device support, npm, Homebrew, Gradle and more — and clears it safely.</p>
+      <p class="lede">Tidy clears junk and caches, maps what's filling your disk, finds big forgotten files and removes apps completely. Every item is explained, and nothing is removed without your approval.</p>
       <a class="cta" href="https://apps.apple.com/app/id6817651013">Download on the Mac App Store</a>
       <p class="fine">For macOS 13 Ventura and later · No account · No tracking</p>
       <img class="shot hero-shot" src="images/01-free-up-space.jpg" alt="Tidy overview showing 52 GB reclaimable and a Clean all safe items button" width="1600" height="1000" />
@@ -81,13 +81,26 @@
 
   <section>
     <div class="wrap">
+      <h2>Everything that fills your disk, in one place</h2>
+      <p class="sub">Tidy finds the space other cleaners miss, and tells you what each item is before you remove it.</p>
+      <div class="grid">
+        <div class="card"><h3>Junk files</h3><p>App caches, leftovers from apps you've deleted, and installers you no longer need.</p></div>
+        <div class="card"><h3>Disk Map</h3><p>See your folders drawn to scale, who each one belongs to, and clean what's safe right from the map.</p></div>
+        <div class="card"><h3>Large files</h3><p>Find big videos, disk images and archives you haven't opened in months.</p></div>
+        <div class="card"><h3>App uninstaller</h3><p>Remove an app together with the settings, caches and data it leaves behind.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
       <h2>Built for developers' Macs</h2>
       <p class="sub">General cleaners miss the biggest offenders on a developer's disk. Tidy knows where they live.</p>
       <div class="grid">
-        <div class="card"><h3>Xcode</h3><p>Stale DerivedData, superseded device support, archives and the documentation cache.</p></div>
-        <div class="card"><h3>Simulators</h3><p>Unused runtimes, simulators you haven't booted in months, and their dyld caches.</p></div>
-        <div class="card"><h3>Developer caches</h3><p>npm, Yarn, pnpm, Homebrew, Gradle, Maven, CocoaPods, pip and SwiftPM.</p></div>
-        <div class="card"><h3>Everything else</h3><p>Large app caches, leftovers from uninstalled apps, forgotten installers and apps you never open.</p></div>
+        <div class="card"><h3>Xcode</h3><p>Stale DerivedData, superseded device support, old simulators, runtimes and archives.</p></div>
+        <div class="card"><h3>Android</h3><p>Emulators you no longer use, unused SDK system images, and Android Studio caches.</p></div>
+        <div class="card"><h3>Package caches</h3><p>npm, Yarn, pnpm, Homebrew, Gradle, Maven, CocoaPods, pip and SwiftPM.</p></div>
+        <div class="card"><h3>Old projects</h3><p>node_modules and build folders in projects you haven't touched in months.</p></div>
       </div>
     </div>
   </section>
@@ -100,7 +113,7 @@
         <div class="card"><p><span class="badge safe">SAFE</span>Rebuilt automatically by its tool. One click cleans them all, or schedule it.</p></div>
         <div class="card"><p><span class="badge review">REVIEW</span>Probably fine to remove, but costs a re-download or rebuild — Tidy waits for you.</p></div>
         <div class="card"><p><span class="badge manual">MANUAL</span>Owned by macOS or another app — Tidy shows you the right way to free it.</p></div>
-        <div class="card"><h3>Undo-friendly</h3><p>Removals go to the Trash, so Finder's "Put Back" restores them. Every action is logged.</p></div>
+        <div class="card"><h3>Undo-friendly</h3><p>Nothing is removed without your approval. Removals go to the Trash, so Finder's "Put Back" restores them.</p></div>
       </div>
     </div>
   </section>
@@ -121,7 +134,7 @@
   <section>
     <div class="wrap" style="text-align:center">
       <h2>Your files stay on your Mac</h2>
-      <p class="sub">Tidy makes no network requests and collects no data. It scans only a fixed list of known cache and build locations.</p>
+      <p class="sub">Tidy makes no network requests and collects no data. Automatic scans check only known cache and build locations; Large Files and Disk Map look further only when you ask.</p>
       <a class="cta" href="https://apps.apple.com/app/id6817651013">Get Tidy</a>
     </div>
   </section>

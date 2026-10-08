@@ -92,7 +92,7 @@
   <div class="container">
 
     <h1>Privacy Policy</h1>
-    <p class="meta">App: <strong>Tidy – Disk Space Cleaner</strong> &nbsp;·&nbsp; Last updated: September 30, 2026</p>
+    <p class="meta">App: <strong>Tidy – Disk Space Cleaner</strong> &nbsp;·&nbsp; Last updated: October 8, 2026</p>
 
     <div class="highlight-box">
       <p>Tidy does not collect, transmit, or share any data. Everything it scans stays on your Mac.</p>
@@ -117,16 +117,24 @@
 
     <h2>Files and Folders</h2>
     <p>
-      To find reclaimable space, Tidy reads the sizes and dates of files in a fixed list of locations, such as
-      Xcode's DerivedData and simulator folders, developer tool caches (npm, Homebrew, Gradle and others),
-      app caches, and installers in your Downloads folder. It never reads the contents of your documents.
+      Tidy reads the names, sizes and dates of files on your Mac to find space you can free up. It never opens or
+      reads the contents of your documents, photos or other files, and nothing it finds leaves your Mac.
     </p>
     <ul>
-      <li><strong>Home folder access:</strong> macOS only lets Tidy look inside your Home folder after you choose it
-        once in a standard Open panel. You can change this at any time in Tidy's Settings.</li>
-      <li><strong>Downloads folder:</strong> read so Tidy can spot installers you no longer need.</li>
-      <li><strong>Removals:</strong> items you choose to clean are moved to the Trash, so you can restore them with
-        Finder's "Put Back". Simulator erase and runtime removal use Xcode's own <code>simctl</code> tool.</li>
+      <li><strong>Automatic scans</strong> look only at a fixed list of known locations, such as Xcode and Android
+        build data and emulators, developer tool caches (npm, Homebrew, Gradle and others), app caches, and
+        installers in your Downloads folder.</li>
+      <li><strong>Large Files and Disk Map</strong> look through your Home folder, including your Desktop, Documents
+        and Downloads, but only when you start them. They measure file sizes and list big files; they don't read
+        what's inside them.</li>
+      <li><strong>Apps:</strong> to show your apps and remove the ones you choose, Tidy reads the list of apps in your
+        Applications folder and the settings and data files each app keeps in your Home folder.</li>
+      <li><strong>Folder access:</strong> macOS only lets Tidy look inside your Home folder, and remove apps from your
+        Applications folder, after you choose that folder once in a standard Open panel. You can change this at any
+        time in Tidy's Settings.</li>
+      <li><strong>Removals:</strong> nothing is removed without your approval. Items you choose to remove are moved to
+        the Trash, so you can restore them with Finder's "Put Back". Simulator erase and runtime removal use Xcode's
+        own <code>simctl</code> tool. Tidy never empties your Trash.</li>
     </ul>
 
     <h2>Data Stored on Your Mac</h2>
@@ -139,6 +147,13 @@
     <p>
       If you allow notifications, Tidy uses them only to tell you when it finds space worth reclaiming or has
       finished a scheduled clean. Notifications are generated on your Mac; nothing is sent to a server.
+    </p>
+
+    <h2>Ratings and Feedback</h2>
+    <p>
+      Tidy may occasionally show Apple's standard App Store rating prompt, which Apple controls. "Rate Tidy" opens
+      the App Store, and "Send Feedback" opens a new email in your own mail app containing only Tidy's and macOS's
+      version numbers. Nothing is sent unless you send that email yourself.
     </p>
 
     <h2>Third-Party Services</h2>
